@@ -1,0 +1,149 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#102d25">
+  <meta name="description" content="Juego didáctico de 100 Mexicanos Dijeron sobre la Revolución Mexicana.">
+  <title>100 Mexicanos Dijeron | Revolución Mexicana</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="eyebrow">EDICIÓN HISTÓRICA</div>
+    <h1>100 Mexicanos <span>Dijeron</span></h1>
+    <p class="header-subtitle">Especial Revolución Mexicana</p>
+    <div class="tricolor" aria-hidden="true"></div>
+  </header>
+
+  <div class="decoration decoration-left" aria-hidden="true">
+    <span>🌵</span>
+    <small>¡VIVA MÉXICO!</small>
+  </div>
+  <div class="decoration decoration-right" aria-hidden="true">
+    <span>🦅</span>
+    <small>TIERRA Y LIBERTAD</small>
+  </div>
+
+  <main class="main-container">
+    <!-- BIENVENIDA -->
+    <section id="welcomeScreen" class="panel screen active">
+      <div class="emblem" aria-hidden="true">🇲🇽 🌵 🎺</div>
+      <p class="eyebrow">¡QUE COMIENCE EL CONCURSO!</p>
+      <h2 class="welcome-title">
+        ¡Bienvenidos al juego de
+        <span>100 Mexicanos Dijeron!</span>
+      </h2>
+      <p class="intro-text">
+        Prepárate para demostrar tus conocimientos sobre
+        la Revolución Mexicana. Descubre las respuestas,
+        acumula puntos y conviértete en el campeón.
+      </p>
+      <button id="startBtn" class="btn btn-primary">
+        Siguiente <span aria-hidden="true">➜</span>
+      </button>
+    </section>
+
+    <!-- PRESENTACIÓN DE CATEGORÍA -->
+    <section id="categoryScreen" class="panel screen category-screen"
+             aria-live="polite">
+      <div class="emblem" aria-hidden="true">🎖️ 🇲🇽 🌵</div>
+      <p class="eyebrow">NUEVA CATEGORÍA</p>
+      <h2 id="categoryTitle" class="category-title"></h2>
+      <div class="countdown-bar" aria-hidden="true">
+        <span id="countdownBar"></span>
+      </div>
+    </section>
+
+    <!-- JUEGO -->
+    <section id="gameScreen" class="panel screen">
+      <div class="game-topline">
+        <span id="categoryBadge" class="category-badge"></span>
+        <span id="progress" class="progress"></span>
+      </div>
+
+      <h2 id="question" class="question"></h2>
+      <p id="generalization" class="generalization"></p>
+
+      <div id="board" class="answer-board" aria-live="polite"></div>
+
+      <div class="score-grid">
+        <div class="score-box">
+          <span>Puntos de esta pregunta</span>
+          <strong id="roundScore">0</strong>
+        </div>
+        <div class="score-box">
+          <span>Puntaje total</span>
+          <strong id="totalScore">0</strong>
+        </div>
+      </div>
+
+      <div id="strikes" class="strikes" aria-label="Errores cometidos">
+        ○ ○ ○
+      </div>
+
+      <form id="answerForm" class="answer-form">
+        <label class="visually-hidden" for="answerInput">
+          Escribe tu respuesta
+        </label>
+        <input id="answerInput" type="text"
+               placeholder="Escribe tu respuesta..."
+               autocomplete="off" required>
+        <button id="submitBtn" class="btn btn-primary" type="submit">
+          ¡Responder!
+        </button>
+      </form>
+
+      <p id="message" class="message" role="status" aria-live="polite">
+        ¡Escribe tu primera respuesta!
+      </p>
+
+      <div class="game-controls">
+        <button id="revealBtn" class="btn btn-gold" type="button">
+          Revelar respuesta
+        </button>
+        <button id="showAllBtn" class="btn btn-secondary" type="button">
+          Revelar todas
+        </button>
+        <button id="nextBtn" class="btn btn-danger" type="button">
+          Siguiente pregunta ➜
+        </button>
+        <button id="resetBtn" class="btn btn-outline" type="button">
+          ↻ Reiniciar
+        </button>
+      </div>
+
+      <p class="game-help">
+        Acierta las respuestas para sumar puntos.
+        Tienes tres errores por pregunta.
+      </p>
+    </section>
+
+    <!-- RESULTADO FINAL -->
+    <section id="finalScreen" class="panel screen final-screen">
+      <div class="emblem" aria-hidden="true">🏆 🎉 🇲🇽</div>
+      <p class="eyebrow">CONCURSO TERMINADO</p>
+      <h2 class="welcome-title">¡Felicidades, revolucionario!</h2>
+      <p class="intro-text">
+        Has completado las dos categorías de la Revolución Mexicana.
+      </p>
+      <div class="score-box final-score">
+        <span>Tu puntuación final</span>
+        <strong id="finalScore">0</strong>
+      </div>
+      <p id="finalMessage" class="intro-text"></p>
+      <button id="playAgainBtn" class="btn btn-primary" type="button">
+        Volver a jugar ↻
+      </button>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-tricolor" aria-hidden="true"></div>
+    <p>Juego didáctico · Generalización en la Revolución Mexicana</p>
+  </footer>
+</body>
+</html>
